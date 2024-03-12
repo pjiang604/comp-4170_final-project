@@ -1,2 +1,11 @@
 ﻿id,title,description,director,producer,release_date,running_time
-1,test_title,test_desc,test_direc,test_prod,test_date,test_time
+1,Castle in the Sky,,Hayao Miyazaki,Isao Takahata,1986,125
+2,My Neighbor Totoro,,Hayao Miyazaki,Toru Hara,1988,86
+3,Kiki's Delivery Service,,Hayao Miyazaki,Hayao Miyazaki,1989,103
+4,Princess Mononoke,,Hayao Miyazaki,Toshio Suzuki,1997,133
+5,Spirited Away,,Hayao Miyazaki,Toshio Suzuki,2001,125
+6,Howl's Moving Castle,,Hayao Miyazaki,Toshio Suzuki,2004,119
+7,Ponyo,,Hayao Miyazaki,Toshio Suzuki,2008,101
+8,From Up on Poppy Hill,,Hayao Miyazaki and Keiko Niwa,Toshio Suzuki,2011,91
+9,The Wind Rises,,Hayao Miyazaki,Toshio Suzuki,2013,126
+10,The Boy and the Heron,,Hayao Miyazaki,Toshio Suzuki,2023,124
