@@ -13,24 +13,38 @@ const db = new pg.Client({
     password: "12345",
     port: 5432,
 });
-db.connect
+
+async function connectDB() {
+    try {
+        await db.connect();
+        console.log("Connected to the database");
+    } catch (error) {
+        console.error("Error connecting to the database:", error);
+    }
+}
+connectDB(); 
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static("public"));
 
-// app.get("/", async (req, res) => {
-//     try {
-//         const response = await axios.get("https://ghibliapi.vercel.app/films");
-//         const result = response.data;
-//         console.log(result);
-//         res.render("movies.ejs", { data: result });
-//     } catch (error) {
-//         console.error("Failed to make request:", error.message);
-//         res.render("movies.ejs", {
-//             error: error.message,
-//         });
-//     }
-// });
+async function showMovies(){
+    const result = await db.query("SELECT * FROM public.new_movies")
+    // let movies = [];
+    // result.rows.forEach((movie) => {
+    //     movies.push(movie.title)
+    // });
+    return result.rows
+}
+
+app.get("/", async (req, res) => {
+    try {
+        const movies = await showMovies();
+        res.render("movies.ejs", { movies: movies });
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
 
 
 app.listen(port, () => {
