@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Document</title>
 </head>
+
+<style>
+    /*External css file is not working for some reason*/
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    li {
+        list-style-type: none;
+    }
+
+    .image {
+        max-width: 10%;
+    }
+
+    .movieContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
+</style>
+
 <body>
-    <h2 class="card-activity">
-        <%=data[1].title %> <!--just showing a random one from the array right now-->
-      </h2>
+    <h1>all ghibli films</h1>
+    <ul>
+        <% movies.forEach(function(movie) { %>
+            <li>
+                <div class="movieContainer">
+                    <img class="image"
+                        src="https://m.media-amazon.com/images/M/MV5BYzJjMTYyMjQtZDI0My00ZjE2LTkyNGYtOTllNGQxNDMyZjE0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg">
+                    <div>
+                        Title: <%= movie.title %><br>
+                            Director: <%= movie.director %><br>
+                                Producer: <%= movie.producer %><br>
+                    </div>
+                </div>
+            </li>
+            <% }); %>
+    </ul>
 </body>
+
 </html>
