@@ -25,7 +25,9 @@ async function connectDB() {
 connectDB(); 
 
 app.use(express.urlencoded({ extended: true}));
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use('/public', express.static('public'));
+
 
 async function showMovies(){
     const result = await db.query("SELECT * FROM public.new_movies")
