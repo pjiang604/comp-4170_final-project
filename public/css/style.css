@@ -16,6 +16,13 @@ li {
     max-width: 10%;
 }
 
+.heartImg{
+    height: 2em;
+    width: 2em;
+    object-fit: contain;
+}
+
+
 .movieContainer {
     display: flex;
     flex-direction: row;
@@ -59,4 +66,24 @@ header {
 .header {
     margin-left: 5%;
     margin-right: 5%;
+}
+
+
+/*ADD FILM CONTAINER*/
+.filmForm,
+.leftCol,
+.rightCol{
+    display: flex;
+    flex-direction: column;
+}
+
+.topRightCol,
+.outerContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
 }

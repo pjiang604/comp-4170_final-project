@@ -4,38 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/public/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css" />
     <title>My Ghibli Library</title>
 </head>
 
 <header>
     <div class="header">
-        <img class="headerImg" src="/public/logo.svg"/>
+        <img class="headerImg" src="/public/logo.svg" />
     </div>
 </header>
+
 <body>
-    <h1>all ghibli films</h1>
-    <ul>
-        <% movies.forEach(function(movie) { %>
-            <li>
-                <div class="movieContainer">
-                    <img class="image"
-                        src="<%= movie.url %>">
-                    <div>
-                        Title: <%= movie.title %><br>
-                            Director: <%= movie.director %><br>
-                                Producer: <%= movie.producer %><br>
-                                Description: <%= movie.description %>
+    <div class="addFilmContainer">
+        <form action="/add" method="post" class="filmForm">
+            <div class="outerContainer">
+                <div class="leftCol">
+                    <div class="inputContainer">
+                        <label for="title">Title of Film (English)</label>
+                        <input type="text" name="title" autofocus>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="director">Director</label>
+                        <input type="text" name="director">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="producer">Producer</label>
+                        <input type="text" name="producer">
                     </div>
                 </div>
-            </li>
-            <% }); %>
-    </ul>
+                <div class="rightCol">
+                    <div class="topRightCol">
+                        <div class="inputContainer">
+                            <label for="running-time">Running time (minutes)</label>
+                            <input type="text" name="running-time">
+                        </div>
+                        <div class="inputContainer">
+                            <label for="release-year">Release Year</label>
+                            <input type="text" name="release-year">
+                        </div>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="description">Synopsis</label>
+                        <textarea type="text" name="description">
+                            </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="inputContainer">
+                <label for="url">Image link</label>
+                <input type="text" name="url">
+            </div>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <div class="movieListContainer">
+        <h1>all ghibli films</h1>
+        <ul>
+            <% movies.forEach(function(movie) { %>
+                <li>
+                    <div class="movieContainer">
+                        <img class="image" src="<%= movie.url %>">
+                        <div>
+                            Title: <%= movie.title %><br>
+                                Director: <%= movie.director %><br>
+                                    Producer: <%= movie.producer %><br>
+                                        Description: <%= movie.description %>
+                        </div>
+                        <div onclick="addFavourite()">
+                            <img class="heartImg" src="/public/heart.png" >
+                        </div>
+
+                    </div>
+                </li>
+                <% }); %>
+        </ul>
+    </div>
+    <script>
+        function addFavourite(){
+            console.log("hello")
+        }
+    </script>
+
 </body>
 <footer>
     <div class="footer">
         <p>API Used</p>
-        <img class="createdImage" src="created.svg">
+        <img class="createdImage" src="/public/created.svg">
     </div>
 </footer>
 
