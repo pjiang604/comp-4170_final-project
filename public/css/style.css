@@ -77,13 +77,72 @@ header {
     flex-direction: column;
 }
 
-.topRightCol,
-.outerContainer{
-    display: flex;
-    flex-direction: row;
+.xf {
+    display:flex;
+    flex-direction:column;
+}
+
+.filmForm {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    margin-left:8%;
+    margin-right:8%;
+    gap: 2em;
 }
 
 .inputContainer{
     display: flex;
     flex-direction: column;
+    margin-top: 1em;
+}
+
+.addFilmContainer {
+    font-family: 'Inter';
+    color: white;
+}
+
+.addButton {
+    background-color: #51CDFF;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    border:none;
+    border-radius: 10px;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    margin-top:1em;
+    width: 170px;
+}
+
+.addButton:hover {
+    background-color:#008bc2;
+    transition: 300ms;
+    cursor:pointer;
+}
+
+.left {
+    display:flex;
+    flex-direction:column;
+}
+
+label {
+    font-family:'Inter';
+    color:white;
+    font-size:20px;
+    font-weight:700;
+    padding-bottom: 0.25em;
+}
+
+input,
+textarea {
+    border-radius: 20px;
+    border:none;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    padding-left: 0.75em;
+}
+
+textarea {
+    min-height:90px;
 }
