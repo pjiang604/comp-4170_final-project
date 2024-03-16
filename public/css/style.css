@@ -30,6 +30,7 @@ li {
     font-family: 'Inter';
 }
 
+/*FOOTER */
 footer {
     height: 70px;
     background: rgba(255, 255, 255, 0.2);
@@ -52,6 +53,7 @@ footer {
     object-fit: contain;
 }
 
+/*HEADER*/
 header {
     height: 120px;
     background: rgba(255, 255, 255, 0.2);
@@ -68,7 +70,6 @@ header {
     margin-right: 5%;
 }
 
-
 /*ADD FILM CONTAINER*/
 .filmForm,
 .leftCol,
@@ -80,13 +81,28 @@ header {
 .xf {
     display:flex;
     flex-direction:column;
+    background: rgba(24, 78, 117, 0.3);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(105px);
+    padding-bottom: 2em;
+    padding-top:1em;
+    margin-left:8%;
+    margin-right:8%;
+    border-radius: 20px;
+}
+
+.addFilmImg {
+    height: 50px;
+    display:flex;
+    flex-direction:row;
+    width:300px;
 }
 
 .filmForm {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr; 
-    margin-left:8%;
-    margin-right:8%;
+    margin-left: 4%;
+    margin-right: 4%;
     gap: 2em;
 }
 
