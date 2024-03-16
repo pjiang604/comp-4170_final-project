@@ -6,6 +6,8 @@ ul {
 
 body {
     background-image: url('/public/BG.png');
+    height:100vh;
+    width:100vw;
 }
 
 li {
@@ -33,32 +35,31 @@ li {
 /*FOOTER */
 footer {
     height: 70px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(6.8px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(24, 78, 117, 0.3);
+    backdrop-filter: blur(5px);
+    width:100%;
+    bottom:0;
+    display: flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .footer {
-    margin-left: 5%;
-    margin-right: 5%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items:center;
     font-family: 'Inter';
+    margin-left: 8%;
+    margin-right: 8%;
 }
 
 .createdImage {
-    height: 30px;
+    height: 50px;
     object-fit: contain;
 }
 
 /*HEADER*/
 header {
     height: 120px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(6.8px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(24, 78, 117, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 .headerImg {
@@ -66,8 +67,20 @@ header {
 }
 
 .header {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 8%;
+    margin-right: 8%;
+    display:flex;
+    flex-direction:row;
+    text-align:center;
+    justify-content: space-between;
+}
+
+.searchBar {
+    width: 300px;
+    font-family: 'Inter';
+    display:flex;
+    align-items:center;
+    height: 20px;
 }
 
 /*ADD FILM CONTAINER*/
@@ -157,6 +170,7 @@ textarea {
     padding-top:0.5em;
     padding-bottom:0.5em;
     padding-left: 0.75em;
+    font-family: 'Inter';
 }
 
 textarea {
