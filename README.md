@@ -1,7 +1,7 @@
 ## NEXT TO DO
-- set up basic delete button that removes data from database
 - Set up default image if user dopesn't input image
 - Make all form inputs mandatory except for url
+-Need to add some kind of UI that tells people which input fields are required (all except url)
 
 ## Local Run Instructions
 1. run ```npm install```

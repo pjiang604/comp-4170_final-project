@@ -45,8 +45,10 @@ app.post("/add", async (req, res) => {
             nextId = parseInt(result.rows[0].max_id) + 1; //add one to the highest id
         }
 
+        const finalUrl = url.trim() === "" ? "https://d2bzx2vuetkzse.cloudfront.net/fit-in/0x450/unshoppable_producs/b2e20c7b-2d08-46fa-941c-5aad59893103.jpeg" : url;
+
         await db.query("INSERT INTO new_movies (id, title, director, producer, running_time, release_date, description, url) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
-            [nextId, title, director, producer, running_time, release_date, description, url]);
+            [nextId, title, director, producer, running_time, release_date, description, finalUrl]);
 
         res.redirect("/");
     } catch (error) {
@@ -59,15 +61,34 @@ app.post("/add", async (req, res) => {
 app.get("/", async (req, res) => {
     try {
         const movies = await showMovies();
-        res.render("movies.ejs", { movies: movies.reverse() });
+        res.render("movies.ejs", { movies });
     } catch (error) {
         console.error("Error fetching movies:", error);
         res.status(500).send("Internal Server Error");
     }
 });
 
+app.post("/edit", async (req, res) => {
+    const title = req.body.updatedMovieTitle;
+    const director = req.body.updatedMovieDirector;
+    const producer = req.body.updatedMovieProducer;
+    const runTime = req.body.updatedMovieRunningTime;
+    const description = req.body.updatedMovieDescription;
+    const releaseYear = req.body.updatedMovieReleaseYear;
+    const url = req.body.updatedMovieUrl;
+
+    const id = req.body.updatedMovieId;
+
+    try {
+        await db.query("UPDATE new_movies SET title = $1, director = $2, producer = $3, running_time = $4, description = $5, release_date = $6, url = $7 WHERE id = $8", [title, director, producer, runTime, description, releaseYear, url, id]);
+        res.redirect("/");
+    } catch (err) {
+        console.log(err);
+    }
+});
+
 app.post("/delete", async (req, res) => {
-    const id = req.body.deleteItemId;
+    const id = req.body.deleteMovieId;
     try {
         await db.query("DELETE FROM new_movies WHERE id = $1", [id]);
         res.redirect("/");
