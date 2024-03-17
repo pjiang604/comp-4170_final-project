@@ -75,7 +75,9 @@
                         <div onclick="addFavourite()">
                             <img class="heartImg" src="/public/heart.png">
                         </div>
-
+                        <form action="/delete" method="post">
+                            <input type="checkbox" onchange="this.form.submit()" name="deleteItemId" value="<%= movie.id %>">
+                          </form>
                     </div>
                 </li>
                 <% }); %>
