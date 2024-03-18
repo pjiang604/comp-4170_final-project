@@ -18,46 +18,49 @@
 <body>
     <div class="xf">
         <img class="addFilmImg" src="/public/add.svg">
+        <!--Form to add content-->
         <form action="/add" method="post" class="filmForm">
             <div class="form">
                 <div class="left">
                     <div class="inputContainer">
                         <label for="title">Title of Film (English)</label>
-                        <input type="text" name="title" autofocus>
+                        <input type="text" name="title" autofocus required>
                     </div>
                     <div class="inputContainer">
                         <label for="director">Director</label>
-                        <input type="text" name="director">
+                        <input type="text" name="director" required>
                     </div>
                     <div class="inputContainer">
                         <label for="producer">Producer</label>
-                        <input type="text" name="producer">
+                        <input type="text" name="producer" required>
                     </div>
                 </div>
             </div>
             <div class="middle">
                 <div class="inputContainer">
                     <label for="running-time">Running time (minutes)</label>
-                    <input type="text" name="running-time">
+                    <input type="text" name="running-time" required>
                 </div>
                 <div class="inputContainer">
                     <label for="description">Synopsis</label>
-                    <textarea type="text" name="description">
+                    <textarea type="text" name="description" required>
                         </textarea>
                 </div>
             </div>
-                <div class="right">
-                        <div class="inputContainer">
-                            <label for="release-year">Release Year</label>
-                            <input type="text" name="release-year">
-                        </div>
-                        <div class="inputContainer">
-                            <label for="url">Image link</label>
-                            <input type="text" name="url">
-                            <button type="submit" class="addButton">Add Film</button>
-                        </div>
+            <div class="right">
+                <div class="inputContainer">
+                    <label for="release-year">Release Year</label>
+                    <input type="text" name="release-year" required>
                 </div>
+                <div class="inputContainer">
+                    <label for="url">Image link</label>
+                    <input type="text" name="url">
+                    <button type="submit" class="addButton">Add Film</button>
+                </div>
+            </div>
         </form>
+
+
     </div>
     <div class="movieListContainer">
         <img class="addFilmImg" src="/public/all.svg">
@@ -66,16 +69,60 @@
                 <li>
                     <div class="movieContainer">
                         <img class="image" src="<%= movie.url %>">
-                        <div>
+                        <div id="title<%=movie.id%>">
                             Title: <%= movie.title %><br>
                                 Director: <%= movie.director %><br>
                                     Producer: <%= movie.producer %><br>
-                                        Description: <%= movie.description %>
+                                        Release Year: <%= movie.release_date %><br>
+                                            Running Time (Minutes): <%= movie.running_time %><br>
+                                                Description: <%= movie.description %>
                         </div>
-                        <div onclick="addFavourite()">
+                        <div>
+                            <form class="edit" action="/edit" method="post" id="input<%=movie.id%>" hidden="true">
+                                <input type="hidden" name="updatedMovieId"
+                                    value="<%= movie.id %>"><!--keep this, need this to pass over id-->
+                                <div class="inputContainer">
+                                    <label for="title">Title of Film (English)</label>
+                                    <input type="text" name="updatedMovieTitle" autocomplete="off" autofocus="true" required/>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="director">Director</label>
+                                    <input type="text" name="updatedMovieDirector" autocomplete="off" required>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="producer">Producer</label>
+                                    <input type="text" name="updatedMovieProducer" required>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="running-time">Running time (minutes)</label>
+                                    <input type="text" name="updatedMovieRunningTime" required>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="description">Synopsis</label>
+                                    <textarea type="text" name="updatedMovieDescription" required>
+                                        </textarea>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="release-year">Release Year</label>
+                                    <input type="text" name="updatedMovieReleaseYear" required>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="url">Image link</label>
+                                    <input type="text" name="updatedMovieUrl" required>
+                                </div>
+                                <button id="done<%=movie.id%>" class="edit" type="submit" hidden>Update</button>
+                            </form>
+                            <button id="edit<%=movie.id%>" class="edit"
+                                onclick="handler('<%=movie.id%>')">Update</button>
+                        </div>
+                        <!-- <div onclick="addFavourite()">
                             <img class="heartImg" src="/public/heart.png">
-                        </div>
-
+                        </div> -->
+                        <form action="/delete" method="post" id="deleteForm<%= movie.id %>">
+                            <input type="hidden" name="deleteMovieId" value="<%= movie.id %>">
+                            <button type="button" onclick="confirmDelete('<%= movie.id %>')">Delete</button>
+                        </form>
+                        
                     </div>
                 </li>
                 <% }); %>
@@ -85,6 +132,20 @@
         function addFavourite() {
             console.log("hello")
         }
+
+        function handler(id) {
+            document.getElementById("title" + id).setAttribute("hidden", true)
+            document.getElementById("edit" + id).setAttribute("hidden", true)
+            document.getElementById("done" + id).removeAttribute("hidden")
+            document.getElementById("input" + id).removeAttribute("hidden")
+        }
+
+        function confirmDelete(movieId) {
+    if (confirm("Are you sure you want to delete this movie?")) {
+        document.getElementById("deleteForm" + movieId).submit();
+    }
+}
+
     </script>
 
 </body>
