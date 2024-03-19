@@ -6,6 +6,9 @@ ul {
 
 body {
     background-image: url('/public/BG.png');
+    background-repeat:no-repeat;
+    animation: animationBG 75s linear infinite;
+    background-attachment: fixed;
     height:100vh;
     width:100vw;
 }
@@ -239,6 +242,9 @@ textarea {
     display:flex;
     flex-direction:row;
     gap: 3%;
+    margin-left:1%;
+    margin-right:4%;
+    align-items:flex-start;
 }
 
 .movieInfo {
@@ -261,6 +267,15 @@ textarea {
     object-fit:contain;
     display:flex;
     flex-direction:column;
+    vertical-align:top;
+}
+
+.allFilmImg {
+    height: 50px;
+    display:flex;
+    flex-direction:row;
+    width:300px;
+    margin-left:2%;
 }
 
 /*Edit Form */
@@ -286,4 +301,17 @@ textarea {
     background-color:#51CDFF;
     transition: 300ms;
     cursor:pointer;
+}
+
+/*for background to move */
+@keyframes animationBG {
+    0% {
+        background-position: 0% 0;
+    }
+    50% {
+        background-position: 80% 0;
+    }
+    100% {
+        background-position: 0% 0;
+    }
 }
