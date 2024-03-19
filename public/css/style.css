@@ -11,6 +11,8 @@ body {
     background-attachment: fixed;
     height:100vh;
     width:100vw;
+    margin-top:0;
+    margin-left:0;
 }
 
 li {
@@ -63,6 +65,9 @@ header {
     height: 120px;
     background: rgba(24, 78, 117, 0.3);
     backdrop-filter: blur(5px);
+    display:flex;
+    flex-direction:row;
+    align-items:center;
 }
 
 .headerImg {
@@ -74,16 +79,8 @@ header {
     margin-right: 8%;
     display:flex;
     flex-direction:row;
-    text-align:center;
-    justify-content: space-between;
-}
-
-.searchBar {
-    width: 300px;
-    font-family: 'Inter';
-    display:flex;
-    align-items:center;
-    height: 20px;
+    width:100%;
+    justify-content:center;
 }
 
 /*ADD FILM CONTAINER*/
