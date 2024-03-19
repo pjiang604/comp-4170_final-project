@@ -317,6 +317,7 @@ textarea {
  @media (max-width: 600px) {
     .filmForm {
         display: grid;
+        margin: 0 5%; 
        
     }
 }
