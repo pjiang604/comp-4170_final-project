@@ -315,5 +315,10 @@ textarea {
 
  /* Mobile Size (iPhone XR) */
  @media (max-width: 600px) {
+    .filmForm {
+        display: grid;
+       
+    }
+}
+
    
-  }
