@@ -38,7 +38,7 @@
             </div>
             <div class="middle">
                 <div class="inputContainer">
-                    <label for="running-time">Running time (minutes)</label>
+                    <label for="running-time">Running Time (Minutes)</label>
                     <input type="text" name="running-time" required>
                 </div>
                 <div class="inputContainer">
@@ -53,7 +53,7 @@
                     <input type="text" name="release-year" required>
                 </div>
                 <div class="inputContainer">
-                    <label for="url">Image link</label>
+                    <label for="url">Image Link</label>
                     <input type="text" name="url">
                     <button type="submit" class="addButton">Add Film</button>
                 </div>
@@ -63,7 +63,7 @@
 
     </div>
     <div class="movieListContainer">
-        <img class="addFilmImg" src="/public/all.svg">
+        <img class="allFilmImg" src="/public/all.svg">
         <ul>
             <% movies.forEach(function(movie) { %>
                 <li>
@@ -94,7 +94,7 @@
                                     <input type="text" name="updatedMovieProducer" required>
                                 </div>
                                 <div class="inputContainer">
-                                    <label for="running-time">Running time (minutes)</label>
+                                    <label for="running-time">Running Time (Minutes)</label>
                                     <input type="text" name="updatedMovieRunningTime" required>
                                 </div>
                                 <div class="inputContainer">
@@ -107,7 +107,7 @@
                                     <input type="text" name="updatedMovieReleaseYear" required>
                                 </div>
                                 <div class="inputContainer">
-                                    <label for="url">Image link</label>
+                                    <label for="url">Image Link</label>
                                     <input type="text" name="updatedMovieUrl" required>
                                 </div>
                                 <button id="done<%=movie.id%>" class="editButton" type="submit" hidden>Update</button>
