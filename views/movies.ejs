@@ -110,9 +110,10 @@
                                     <label for="url">Image link</label>
                                     <input type="text" name="updatedMovieUrl" required>
                                 </div>
-                                <button id="done<%=movie.id%>" class="edit" type="submit" hidden>Update</button>
+                                <button id="done<%=movie.id%>" class="editButton" type="submit" hidden>Update</button>
+                                <button onclick="closeForm('<%=movie.id%>')" class="closeButton">Close Form</button>
                             </form>
-                            <button id="edit<%=movie.id%>" class="edit"
+                            <button id="edit<%=movie.id%>" class="editButton"
                                 onclick="handler('<%=movie.id%>')">Update</button>
                         </div>
                         <!-- <div onclick="addFavourite()">
@@ -146,6 +147,10 @@
     }
 }
 
+        function closeForm(id) {
+            document.getElementById("input" + id).setAttribute("hidden", true);
+            document.getElementById("edit" + id).removeAttribute("hidden", true);
+        }
     </script>
 
 </body>

@@ -179,21 +179,21 @@ textarea {
 }
 
 /*Edit & Delete buttons */
-.edit {
+.editButton {
     background-color: #51CDFF;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     border:none;
     border-radius: 10px;
-    padding-top:0.5em;
-    padding-bottom:0.5em;
+    padding-top:0.75em;
+    padding-bottom:0.75em;
     margin-top:1em;
-    width: 70px;
+    min-width: 100px;
 }
 
-.edit:hover {
+.editButton:hover {
     background-color:#008bc2;
     transition: 300ms;
     cursor:pointer;
@@ -203,14 +203,14 @@ textarea {
     background-color: #008bc2;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     border:none;
     border-radius: 10px;
-    padding-top:0.5em;
-    padding-bottom:0.5em;
+    padding-top:0.75em;
+    padding-bottom:0.75em;
     margin-top:1em;
-    width: 70px;
+    width: 100px;
 }
 
 .delete:hover {
@@ -247,14 +247,43 @@ textarea {
     display:flex;
     flex-direction:column;
     width: 700px;
+    margin-bottom:3em;
 }
 
 .movieTitle {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 800;
+    margin-bottom:1em;
 }
 
 .movieImage {
     width:15%;
     object-fit:contain;
+    display:flex;
+    flex-direction:column;
+}
+
+/*Edit Form */
+.edit {
+    width: 500px;
+}
+
+.closeButton {
+    background-color: #008bc2;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    border:none;
+    border-radius: 10px;
+    padding-top:0.75em;
+    padding-bottom:0.75em;
+    margin-top:1em;
+    width: 180px;
+}
+
+.closeButton:hover {
+    background-color:#51CDFF;
+    transition: 300ms;
+    cursor:pointer;
 }
