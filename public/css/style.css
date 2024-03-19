@@ -313,4 +313,7 @@ textarea {
     }
 }
 
-/*Mobile version*/
+ /* Mobile Size (iPhone XR) */
+ @media (max-width: 600px) {
+   
+  }
