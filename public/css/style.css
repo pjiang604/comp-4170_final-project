@@ -318,7 +318,7 @@ textarea {
     .filmForm {
         display: grid;
         margin: 0 5%; 
-       
+        gap: 1em;
     }
 }
 
