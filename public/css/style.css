@@ -101,6 +101,7 @@ header {
     padding-top:1em;
     margin-left:8%;
     margin-right:8%;
+    margin-top: 5em;
     border-radius: 20px;
 }
 
@@ -175,4 +176,85 @@ textarea {
 
 textarea {
     min-height:90px;
+}
+
+/*Edit & Delete buttons */
+.edit {
+    background-color: #51CDFF;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    border:none;
+    border-radius: 10px;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    margin-top:1em;
+    width: 70px;
+}
+
+.edit:hover {
+    background-color:#008bc2;
+    transition: 300ms;
+    cursor:pointer;
+}
+
+.delete {
+    background-color: #008bc2;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    border:none;
+    border-radius: 10px;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    margin-top:1em;
+    width: 70px;
+}
+
+.delete:hover {
+    background-color:#51CDFF;
+    transition: 300ms;
+    cursor:pointer;
+}
+
+/*Movie List*/
+.movieListContainer {
+    display:flex;
+    flex-direction:column;
+    background: rgba(24, 78, 117, 0.3);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(105px);
+    padding-bottom: 2em;
+    padding-top:1em;
+    margin-left:8%;
+    margin-right:8%;
+    margin-top: 5em;
+    border-radius: 20px;
+    margin-bottom: 5em;
+}
+
+.movieContainer {
+    display:flex;
+    flex-direction:row;
+    gap: 3%;
+}
+
+.movieInfo {
+    color:white;
+    font-size: 16px;
+    display:flex;
+    flex-direction:column;
+    width: 700px;
+}
+
+.movieTitle {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.movieImage {
+    width:15%;
+    object-fit:contain;
 }
