@@ -68,14 +68,14 @@
             <% movies.forEach(function(movie) { %>
                 <li>
                     <div class="movieContainer">
-                        <img class="image" src="<%= movie.url %>">
-                        <div id="title<%=movie.id%>">
-                            Title: <%= movie.title %><br>
+                        <img class="movieImage" src="<%= movie.url %>">
+                        <div id="title<%=movie.id%>" class="movieInfo">
+                            <div class="movieTitle"><%= movie.title %><br></div>
                                 Director: <%= movie.director %><br>
                                     Producer: <%= movie.producer %><br>
                                         Release Year: <%= movie.release_date %><br>
-                                            Running Time (Minutes): <%= movie.running_time %><br>
-                                                Description: <%= movie.description %>
+                                            Running Time (Minutes): <%= movie.running_time %><br><br>
+                                                <%= movie.description %>
                         </div>
                         <div>
                             <form class="edit" action="/edit" method="post" id="input<%=movie.id%>" hidden="true">
@@ -120,7 +120,7 @@
                         </div> -->
                         <form action="/delete" method="post" id="deleteForm<%= movie.id %>">
                             <input type="hidden" name="deleteMovieId" value="<%= movie.id %>">
-                            <button type="button" onclick="confirmDelete('<%= movie.id %>')">Delete</button>
+                            <button type="button" class="delete" onclick="confirmDelete('<%= movie.id %>')">Delete</button>
                         </form>
                         
                     </div>
