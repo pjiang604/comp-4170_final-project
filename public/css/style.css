@@ -317,6 +317,34 @@ textarea {
     }
 }
 
+/* Tablet Size (iPad Air) */
+@media (max-width: 821px) {
+    .edit {
+        max-width: 200px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    .movieTitle {
+        font-size: 25px;
+    }
+
+    .closeButton {
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .editButton {
+        font-size: 14px;
+    }
+    
+    .delete {
+        font-size: 14px;
+    }
+}
+
 /* Mobile Size (iPhone XR) */
 @media (max-width: 600px) {
     .filmForm {
@@ -354,7 +382,9 @@ textarea {
         align-items:center;
         justify-content:center;
     }
+
     .edit {
-        width: 268px;
+        max-width: 250px;
+        margin-right:1em;
     }
 }
