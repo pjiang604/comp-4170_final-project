@@ -321,6 +321,10 @@ textarea {
         gap: 1em;
         grid-template-columns: none;
     }
+    .movieImage {
+        width: 40%;
+        }
+    
 }
 
    
