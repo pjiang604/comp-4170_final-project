@@ -354,4 +354,7 @@ textarea {
         align-items:center;
         justify-content:center;
     }
+    .edit {
+        width: 268px;
+    }
 }
