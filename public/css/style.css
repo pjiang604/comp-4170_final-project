@@ -6,13 +6,13 @@ ul {
 
 body {
     background-image: url('/public/BG.png');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     animation: animationBG 75s linear infinite;
     background-attachment: fixed;
-    height:100vh;
-    width:100vw;
-    margin-top:0;
-    margin-left:0;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0;
+    margin-left: 0;
 }
 
 li {
@@ -23,7 +23,7 @@ li {
     max-width: 10%;
 }
 
-.heartImg{
+.heartImg {
     height: 2em;
     width: 2em;
     object-fit: contain;
@@ -42,11 +42,11 @@ footer {
     height: 70px;
     background: rgba(24, 78, 117, 0.3);
     backdrop-filter: blur(5px);
-    width:100%;
-    bottom:0;
+    width: 100%;
+    bottom: 0;
     display: flex;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer {
@@ -65,9 +65,9 @@ header {
     height: 120px;
     background: rgba(24, 78, 117, 0.3);
     backdrop-filter: blur(5px);
-    display:flex;
-    flex-direction:row;
-    align-items:center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .headerImg {
@@ -77,50 +77,50 @@ header {
 .header {
     margin-left: 8%;
     margin-right: 8%;
-    display:flex;
-    flex-direction:row;
-    width:100%;
-    justify-content:center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
 }
 
 /*ADD FILM CONTAINER*/
 .filmForm,
 .leftCol,
-.rightCol{
+.rightCol {
     display: flex;
     flex-direction: column;
 }
 
 .xf {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     background: rgba(24, 78, 117, 0.3);
     backdrop-filter: blur(6.8px);
     -webkit-backdrop-filter: blur(105px);
     padding-bottom: 2em;
-    padding-top:1em;
-    margin-left:8%;
-    margin-right:8%;
+    padding-top: 1em;
+    margin-left: 8%;
+    margin-right: 8%;
     margin-top: 5em;
     border-radius: 20px;
 }
 
 .addFilmImg {
     height: 50px;
-    display:flex;
-    flex-direction:row;
-    width:300px;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
 }
 
 .filmForm {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-left: 4%;
     margin-right: 4%;
     gap: 2em;
 }
 
-.inputContainer{
+.inputContainer {
     display: flex;
     flex-direction: column;
     margin-top: 1em;
@@ -137,45 +137,45 @@ header {
     font-weight: 700;
     font-size: 20px;
     color: white;
-    border:none;
+    border: none;
     border-radius: 10px;
-    padding-top:0.5em;
-    padding-bottom:0.5em;
-    margin-top:1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 1em;
     width: 170px;
 }
 
 .addButton:hover {
-    background-color:#008bc2;
+    background-color: #008bc2;
     transition: 300ms;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .left {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    font-family:'Inter';
-    color:white;
-    font-size:20px;
-    font-weight:700;
+    font-family: 'Inter';
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
     padding-bottom: 0.25em;
 }
 
 input,
 textarea {
     border-radius: 20px;
-    border:none;
-    padding-top:0.5em;
-    padding-bottom:0.5em;
+    border: none;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     padding-left: 0.75em;
     font-family: 'Inter';
 }
 
 textarea {
-    min-height:90px;
+    min-height: 90px;
 }
 
 /*Edit & Delete buttons */
@@ -185,18 +185,18 @@ textarea {
     font-weight: 700;
     font-size: 16px;
     color: white;
-    border:none;
+    border: none;
     border-radius: 10px;
-    padding-top:0.75em;
-    padding-bottom:0.75em;
-    margin-top:1em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    margin-top: 1em;
     min-width: 100px;
 }
 
 .editButton:hover {
-    background-color:#008bc2;
+    background-color: #008bc2;
     transition: 300ms;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .delete {
@@ -205,74 +205,74 @@ textarea {
     font-weight: 700;
     font-size: 16px;
     color: white;
-    border:none;
+    border: none;
     border-radius: 10px;
-    padding-top:0.75em;
-    padding-bottom:0.75em;
-    margin-top:1em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    margin-top: 1em;
     width: 100px;
 }
 
 .delete:hover {
-    background-color:#51CDFF;
+    background-color: #51CDFF;
     transition: 300ms;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 /*Movie List*/
 .movieListContainer {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     background: rgba(24, 78, 117, 0.3);
     backdrop-filter: blur(6.8px);
     -webkit-backdrop-filter: blur(105px);
     padding-bottom: 2em;
-    padding-top:1em;
-    margin-left:8%;
-    margin-right:8%;
+    padding-top: 1em;
+    margin-left: 8%;
+    margin-right: 8%;
     margin-top: 5em;
     border-radius: 20px;
     margin-bottom: 5em;
 }
 
 .movieContainer {
-    display:flex;
-    flex-direction:row;
+    display: flex;
+    flex-direction: row;
     gap: 3%;
-    margin-left:1%;
-    margin-right:4%;
-    align-items:flex-start;
+    margin-left: 1%;
+    margin-right: 4%;
+    align-items: flex-start;
 }
 
 .movieInfo {
-    color:white;
+    color: white;
     font-size: 16px;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     width: 700px;
-    margin-bottom:3em;
+    margin-bottom: 3em;
 }
 
 .movieTitle {
     font-size: 30px;
     font-weight: 800;
-    margin-bottom:1em;
+    margin-bottom: 1em;
 }
 
 .movieImage {
-    width:15%;
-    object-fit:contain;
-    display:flex;
-    flex-direction:column;
-    vertical-align:top;
+    width: 15%;
+    object-fit: contain;
+    display: flex;
+    flex-direction: column;
+    vertical-align: top;
 }
 
 .allFilmImg {
     height: 50px;
-    display:flex;
-    flex-direction:row;
-    width:300px;
-    margin-left:2%;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    margin-left: 2%;
 }
 
 /*Edit Form */
@@ -286,18 +286,18 @@ textarea {
     font-weight: 700;
     font-size: 16px;
     color: white;
-    border:none;
+    border: none;
     border-radius: 10px;
-    padding-top:0.75em;
-    padding-bottom:0.75em;
-    margin-top:1em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    margin-top: 1em;
     width: 180px;
 }
 
 .closeButton:hover {
-    background-color:#51CDFF;
+    background-color: #51CDFF;
     transition: 300ms;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 /*for background to move */
@@ -305,22 +305,42 @@ textarea {
     0% {
         background-position: 0% 0;
     }
+
     50% {
         background-position: 80% 0;
     }
+
     100% {
         background-position: 0% 0;
     }
 }
 
- /* Mobile Size (iPhone XR) */
- @media (max-width: 600px) {
+/* Mobile Size (iPhone XR) */
+@media (max-width: 600px) {
     .filmForm {
         display: grid;
-        margin: 0 5%; 
+        margin: 0 5%;
         gap: 1em;
         grid-template-columns: none;
     }
-}
 
-   
+    .movieImage {
+        width: 40%;
+    }
+
+    .movieTitle {
+        font-size: 35px;
+        font-weight: 800;
+        margin-bottom: 2em;
+    }
+
+    .movieInfo {
+        width: 90%; 
+        margin: 0 auto; 
+        font-size: 14px; 
+    }
+
+    .movieContainer {
+        flex-wrap: wrap;
+    }
+}
