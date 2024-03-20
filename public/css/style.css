@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 ul {
     display: flex;
     flex-direction: column;
@@ -325,23 +327,31 @@ textarea {
     }
 
     .movieImage {
-        width: 40%;
+        width: 90%;
+        margin-right: 1em;
+        margin-top: 1em;
+    }
+
+    .movieInfo {
+        width: 100%; 
+        margin: 0 auto; 
+        margin-right: 1em;
+        font-size: 14px; 
     }
 
     .movieTitle {
         font-size: 25px;
-        font-weight: 800;
-        margin-bottom: 2em;
-        position: absolute;
-    }
-
-    .movieInfo {
-        width: 90%; 
-        margin: 0 auto; 
-        font-size: 14px; 
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
     }
 
     .movieContainer {
         flex-wrap: wrap;
+    }
+
+    .addFilmButton {
+        display:flex;
+        align-items:center;
+        justify-content:center;
     }
 }
