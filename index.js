@@ -35,8 +35,20 @@ async function showMovies() {
     return result.rows
 }
 
+app.get("/", async (req, res) => {
+    try {
+        const movies = await showMovies();
+        res.render("movies.ejs", { movies });
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 app.post("/add", async (req, res) => {
-    const { title, director, producer, running_time, release_date, description, url } = req.body;
+    const { title, director, producer, description, url } = req.body;
+    const running_time = parseInt(req.body.runningTime)
+    const release_date = parseInt(req.body.releaseDate)
 
     try {
         const result = await db.query("SELECT MAX(id) AS max_id FROM new_movies"); //what's the highest id number
@@ -53,18 +65,7 @@ app.post("/add", async (req, res) => {
         res.redirect("/");
     } catch (error) {
         console.error("Error inserting movie:", error);
-        res.status(500).send("Internal Server Error");
         res.redirect("/");
-    }
-});
-
-app.get("/", async (req, res) => {
-    try {
-        const movies = await showMovies();
-        res.render("movies.ejs", { movies });
-    } catch (error) {
-        console.error("Error fetching movies:", error);
-        res.status(500).send("Internal Server Error");
     }
 });
 
@@ -72,18 +73,20 @@ app.post("/edit", async (req, res) => {
     const title = req.body.updatedMovieTitle;
     const director = req.body.updatedMovieDirector;
     const producer = req.body.updatedMovieProducer;
-    const runTime = req.body.updatedMovieRunningTime;
+    const runTime = parseInt(req.body.updatedMovieRunningTime);
     const description = req.body.updatedMovieDescription;
-    const releaseYear = req.body.updatedMovieReleaseYear;
+    const releaseDate = parseInt(req.body.updatedMovieReleaseDate);
     const url = req.body.updatedMovieUrl;
 
     const id = req.body.updatedMovieId;
 
     try {
-        await db.query("UPDATE new_movies SET title = $1, director = $2, producer = $3, running_time = $4, description = $5, release_date = $6, url = $7 WHERE id = $8", [title, director, producer, runTime, description, releaseYear, url, id]);
+        await db.query("UPDATE new_movies SET title = $1, director = $2, producer = $3, running_time = $4, description = $5, release_date = $6, url = $7 WHERE id = $8", [title, director, producer, runTime, description, releaseDate, url, id]);
         res.redirect("/");
     } catch (err) {
-        console.log(err);
+        console.log("Error editing movie:", err);
+        res.redirect("/");
+
     }
 });
 
@@ -93,7 +96,8 @@ app.post("/delete", async (req, res) => {
         await db.query("DELETE FROM new_movies WHERE id = $1", [id]);
         res.redirect("/");
     } catch (err) {
-        console.log(err);
+        console.log("Error deleting movie", err);
+        res.redirect("/");
     }
 });
 

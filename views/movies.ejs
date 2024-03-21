@@ -22,34 +22,33 @@
             <div class="form">
                 <div class="left">
                     <div class="inputContainer">
-                        <label for="title">Title of Film (English)</label>
+                        <label for="title">Title of Film (English)<span class="requiredIcon">*</span></label>
                         <input type="text" name="title" autofocus required>
                     </div>
                     <div class="inputContainer">
-                        <label for="director">Director</label>
+                        <label for="director">Director<span class="requiredIcon">*</span></label>
                         <input type="text" name="director" required>
                     </div>
                     <div class="inputContainer">
-                        <label for="producer">Producer</label>
+                        <label for="producer">Producer<span class="requiredIcon">*</span></label>
                         <input type="text" name="producer" required>
                     </div>
                 </div>
             </div>
             <div class="middle">
                 <div class="inputContainer">
-                    <label for="running-time">Running Time (Minutes)</label>
-                    <input type="text" name="running-time" required>
+                    <label for="running-time">Running Time (Minutes)<span class="requiredIcon">*</span></label>
+                    <input type="number" name="runningTime" required>
                 </div>
                 <div class="inputContainer">
-                    <label for="description">Synopsis</label>
-                    <textarea type="text" name="description" required>
-                        </textarea>
+                    <label for="description">Synopsis<span class="requiredIcon">*</span></label>
+                    <textarea type="text" name="description" required></textarea>
                 </div>
             </div>
             <div class="right">
                 <div class="inputContainer">
-                    <label for="release-year">Release Year</label>
-                    <input type="text" name="release-year" required>
+                    <label for="release-date">Release Year<span class="requiredIcon">*</span></label>
+                    <input type="number" name="releaseDate" required>
                 </div>
                 <div class="inputContainer">
                     <label for="url">Image Link</label>
@@ -63,6 +62,7 @@
 
 
     </div>
+    <!--List of movies-->
     <div class="movieListContainer">
         <img class="allFilmImg" src="/public/all.svg">
         <ul>
@@ -71,45 +71,55 @@
                     <div class="movieContainer">
                         <img class="movieImage" src="<%= movie.url %>">
                         <div id="title<%=movie.id%>" class="movieInfo">
-                            <div class="movieTitle"><%= movie.title %><br></div>
-                                Director: <%= movie.director %><br>
-                                    Producer: <%= movie.producer %><br>
-                                        Release Year: <%= movie.release_date %><br>
-                                            Running Time (Minutes): <%= movie.running_time %><br><br>
-                                                <%= movie.description %>
+                            <div class="movieTitle">
+                                <%= movie.title %><br>
+                            </div>
+                            Director: <%= movie.director %><br>
+                                Producer: <%= movie.producer %><br>
+                                    Release Year: <%= movie.release_date %><br>
+                                        Running Time (Minutes): <%= movie.running_time %><br><br>
+                                            <%= movie.description %>
                         </div>
+                        <!--Form to Edit Content-->
                         <div>
                             <form class="edit" action="/edit" method="post" id="input<%=movie.id%>" hidden="true">
                                 <input type="hidden" name="updatedMovieId"
                                     value="<%= movie.id %>"><!--keep this, need this to pass over id-->
                                 <div class="inputContainer">
-                                    <label for="title">Title of Film (English)</label>
-                                    <input type="text" name="updatedMovieTitle" autocomplete="off" autofocus="true" required/>
+                                    <label for="title">Title of Film (English)<span
+                                            class="requiredIcon">*</span></label>
+                                    <input type="text" name="updatedMovieTitle" value="<%=movie.title %>"
+                                        autocomplete="off" autofocus="true" required />
                                 </div>
                                 <div class="inputContainer">
-                                    <label for="director">Director</label>
-                                    <input type="text" name="updatedMovieDirector" autocomplete="off" required>
+                                    <label for="director">Director<span class="requiredIcon">*</span></label>
+                                    <input type="text" name="updatedMovieDirector" value="<%=movie.director %>"
+                                        autocomplete="off" required>
                                 </div>
                                 <div class="inputContainer">
-                                    <label for="producer">Producer</label>
-                                    <input type="text" name="updatedMovieProducer" required>
+                                    <label for="producer">Producer<span class="requiredIcon">*</span></label>
+                                    <input type="text" name="updatedMovieProducer" value="<%=movie.producer %>"
+                                        required>
                                 </div>
                                 <div class="inputContainer">
-                                    <label for="running-time">Running Time (Minutes)</label>
-                                    <input type="text" name="updatedMovieRunningTime" required>
+                                    <label for="running-time">Running Time (Minutes)<span
+                                            class="requiredIcon">*</span></label>
+                                    <input type="number" name="updatedMovieRunningTime" value="<%=movie.running_time %>"
+                                        required>
                                 </div>
                                 <div class="inputContainer">
-                                    <label for="description">Synopsis</label>
-                                    <textarea type="text" name="updatedMovieDescription" required>
-                                        </textarea>
+                                    <label for="description">Synopsis<span class="requiredIcon">*</span></label>
+                                    <textarea type="text" name="updatedMovieDescription"
+                                        required><%=movie.description %></textarea>
                                 </div>
                                 <div class="inputContainer">
-                                    <label for="release-year">Release Year</label>
-                                    <input type="text" name="updatedMovieReleaseYear" required>
+                                    <label for="releaseDate">Release Year<span class="requiredIcon">*</span></label>
+                                    <input type="number" name="updatedMovieReleaseDate" value="<%=movie.release_date %>"
+                                        required>
                                 </div>
                                 <div class="inputContainer">
                                     <label for="url">Image Link</label>
-                                    <input type="text" name="updatedMovieUrl" required>
+                                    <input type="text" name="updatedMovieUrl" value="<%=movie.url %>" required>
                                 </div>
                                 <button id="done<%=movie.id%>" class="editButton" type="submit" hidden>Update</button>
                                 <button onclick="closeForm('<%=movie.id%>')" class="closeButton">Close Form</button>
@@ -117,14 +127,12 @@
                             <button id="edit<%=movie.id%>" class="editButton"
                                 onclick="handler('<%=movie.id%>')">Update</button>
                         </div>
-                        <!-- <div onclick="addFavourite()">
-                            <img class="heartImg" src="/public/heart.png">
-                        </div> -->
                         <form action="/delete" method="post" id="deleteForm<%= movie.id %>">
                             <input type="hidden" name="deleteMovieId" value="<%= movie.id %>">
-                            <button type="button" class="delete" onclick="confirmDelete('<%= movie.id %>')">Delete</button>
+                            <button type="button" class="delete"
+                                onclick="confirmDelete('<%= movie.id %>')">Delete</button>
                         </form>
-                        
+
                     </div>
                 </li>
                 <% }); %>
@@ -139,11 +147,10 @@
         }
 
         function confirmDelete(movieId) {
-    if (confirm("Are you sure you want to delete this movie?")) {
-        document.getElementById("deleteForm" + movieId).submit();
-    }
-}
-
+            if (confirm("Are you sure you want to delete this movie?")) {
+                document.getElementById("deleteForm" + movieId).submit();
+            }
+        }
         function closeForm(id) {
             document.getElementById("input" + id).setAttribute("hidden", true);
             document.getElementById("edit" + id).removeAttribute("hidden", true);
