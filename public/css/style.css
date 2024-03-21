@@ -39,6 +39,10 @@ li {
     font-family: 'Inter';
 }
 
+.requiredIcon{
+    color: #CD5C5C;
+}
+
 /*FOOTER */
 footer {
     height: 70px;
@@ -172,7 +176,7 @@ textarea {
     border: none;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    padding-left: 0.75em;
+    padding-left: 0.75em !important;
     font-family: 'Inter';
 }
 
